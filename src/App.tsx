@@ -25,7 +25,6 @@ const data = [
     name: 'c'
   },
 ];
-
 let b:addRoomMessage
 class App extends Component {
   state = {
