@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/s-darren/chatroom-fontcode.svg?branch=master)](https://travis-ci.org/s-darren/chatroom-fontcode)
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
