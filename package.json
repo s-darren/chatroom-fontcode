@@ -7,7 +7,7 @@
     "@types/node": "11.13.2",
     "@types/react": "16.8.11",
     "@types/react-dom": "16.8.3",
-    "antd": "^3.16.2",
+    "antd": "^3.19.2",
     "moment": "^2.24.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -15,7 +15,7 @@
     "typescript": "3.4.2"
   },
   "scripts": {
-    "start": "react-app-rewired start start",
+    "start": "cross-env PORT=5000 react-app-rewired start start",
     "build": "react-app-rewired start build",
     "test": "react-app-rewired start test",
     "eject": "react-scripts eject"
@@ -31,6 +31,7 @@
   ],
   "devDependencies": {
     "babel-plugin-import": "^1.11.0",
+    "cross-env": "^5.2.0",
     "customize-cra": "^0.2.12",
     "react-app-rewired": "^2.1.1"
   }
