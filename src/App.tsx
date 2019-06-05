@@ -33,8 +33,8 @@ interface normalObj {
 interface webSocketInstance extends normalObj {
   websocketInstance: WebSocket
 }
-
 class App extends Component<normalObj, webSocketInstance> {
+  [propName: string]: any;
   constructor(props: any) {
     super(props);
     this.state = {
@@ -60,9 +60,17 @@ class App extends Component<normalObj, webSocketInstance> {
     console.log(this)
   }
   onWebSocketMessage = (msg: MessageEvent) => {
-    console.log(msg)
+    console.log(msg.data)
     // this.state.websocketInstance.send('1199')
     
+  }
+  chooseCommon = (data:string) => {
+    let splitString:string[] = data.split(':')
+    if(this[splitString[0]]) {
+      this[splitString[0]]()
+    } else {
+      throw new Error ('no methods')
+    }
   }
   roomIDWarning = () => {
     message.warning('请输入聊天室ID');
@@ -137,6 +145,7 @@ class App extends Component<normalObj, webSocketInstance> {
           visible={this.state.visible}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
+          maskClosable={false}
         >
           <InputNumber min={1} max={9999} defaultValue={this.state.roomID} onChange={this.onRoomIDChange} />
         </Modal>
